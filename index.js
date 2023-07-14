@@ -10,6 +10,7 @@ import contactRoute from "./routes/contact.js"
 import confirmbRoute from "./routes/confirmb.js"
 import cors from "cors"
 import path from "path"
+import { fileURLToPath } from 'url';
 
 const app = express()
 dotenv.config()
@@ -58,6 +59,9 @@ app.use((err, req, res, next) => {
 })
 
 // static files
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 app.use(express.static(path.join(__dirname, './client/build')))
 
 app.get('*', function (req, res) {
