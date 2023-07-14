@@ -9,7 +9,7 @@ import cookieParser from "cookie-parser";
 import contactRoute from "./routes/contact.js"
 import confirmbRoute from "./routes/confirmb.js"
 import cors from "cors"
-const path = require("path")
+import path from "path"
 
 const app = express()
 dotenv.config()
